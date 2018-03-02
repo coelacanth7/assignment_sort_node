@@ -17,6 +17,7 @@ function insertionSort(arr) {
 	return arr;
 }
 
-console.log(insertionSort([1, 3, 7, 2, 5]));
-console.log(insertionSort([9, 6, 7, 5, 4, 3, 2, 1, 666]));
-console.log(insertionSort([6, 7, 85, 4, 3, -3, -2, -1]));
+module.exports = insertionSort;
+// console.log(insertionSort([1, 3, 7, 2, 5]));
+// console.log(insertionSort([9, 6, 7, 5, 4, 3, 2, 1, 666]));
+// console.log(insertionSort([6, 7, 85, 4, 3, -3, -2, -1]));

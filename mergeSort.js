@@ -2,16 +2,22 @@
 
 function merge(leftArr, rightArr) {
 	let newArr = [];
+	let indexLeft = 0;
+	let indexRight = 0;
 
-	while (leftArr.length && rightArr.length) {
-		if (leftArr[0] < rightArr[0]) {
-			newArr.push(leftArr.shift());
+	while (indexLeft < leftArr.length && indexRight < rightArr.length) {
+		if (leftArr[indexLeft] < rightArr[indexRight]) {
+			newArr.push(leftArr[indexLeft]);
+			indexLeft++;
 		} else {
-			newArr.push(rightArr.shift());
+			newArr.push(rightArr[indexRight]);
+			indexRight++;
 		}
 	}
 
-	return newArr.concat(leftArr, rightArr);
+	return newArr
+		.concat(leftArr.slice(indexLeft))
+		.concat(rightArr.slice(indexRight));
 }
 
 function mergeSort(arr) {
@@ -22,6 +28,8 @@ function mergeSort(arr) {
 		mergeSort(arr.slice(Math.floor(arr.length / 2)))
 	);
 }
+
+module.exports = mergeSort;
 
 console.log(mergeSort([1, 3, 7, 2, 5]));
 console.log(mergeSort([9, 6, 7, 5, 4, 3, 2, 1, 666]));
