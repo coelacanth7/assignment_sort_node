@@ -1,3 +1,3 @@
-# assignment_sort_node
+# Sorting Algorithms
 
-Insertion and Merge Sort assignment
+Insertion, bubble, and merge sort practice.
